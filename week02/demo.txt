@@ -1,12 +1,12 @@
 #Wednesday 03/Mar/2021
 #Tutor: George
-#Topics: Python, Bash 
+#Topics: Python, Bash$ 
 
-$Reg-Ex: common patterns used in searching and filtering
+$Reg-Ex is used searching and filtering in this tutorial
 
-^NOTE: both grep and sed use REGEX 
+^NOTE: both grep and sed use REGEX$  
 ^NOTE: UNIX, Perl, Java, Python use regex
 
-#Demo File: demo.txt 
+Tutorial File: demo.txt 
 TYPE: text 
 SIZE: 236
