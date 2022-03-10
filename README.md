@@ -1,7 +1,7 @@
 # Goanna Restart 
-## This Repository Contains Materials used for Teaching and Learning
+## This repository contains materials used for Teaching and Learning
 
-### Setup Your Own GitHub Repo
+### Setup your own GitHub repo
 
 * Sign up with GitHub using your email
 * Create your first repository on GitHub: https://youtu.be/vUqOoSUXvX4
