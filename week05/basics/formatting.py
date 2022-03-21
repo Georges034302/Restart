@@ -1,3 +1,5 @@
+#!/bin/python
+
 name="Tom"
 balance=150.90
 

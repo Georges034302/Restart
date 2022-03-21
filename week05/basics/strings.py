@@ -1,3 +1,5 @@
+#!/bin/python
+
 s = "Goanna Restart 2022 - Python"
 
 l = len(s)                          #we determine the length of string s
