@@ -1,4 +1,4 @@
-#!/bin/python
+#!/bin/env python3
 
 #declare 4 variables int, float , string and boolean 
 #store 4, 3.5 "Hello", and "True" in these variables

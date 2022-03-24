@@ -1,5 +1,5 @@
 
-
+#!/bin/env python3
 mylist= list(range(1,30))           #Create a sequence of elements using range from 1 to 29
 print(mylist)
 

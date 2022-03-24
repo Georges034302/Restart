@@ -1,3 +1,5 @@
+#!/bin/env python3
+
 #Create a range of integers from 1 to 20
 #Calculate the sum
 #Display the average

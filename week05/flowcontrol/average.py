@@ -1,11 +1,12 @@
+#!/bin/env python3
+
 #Read integers from STDIN until -1
 #Show the average value
-
+#!/bin/env python3
 value = input("Value = ")
 while (not(value.isnumeric())):
     print("Not number - Please try again ...") 
-    value = input("Value = ")
-    
+    value = input("Value = ")    
 number = int(value)
 
 total = 0

@@ -1,4 +1,7 @@
 #Determine the grades based on marks from arguments
+
+#!/bin/env python3
+
 #Enter the student name from STDIN
 
 import sys 

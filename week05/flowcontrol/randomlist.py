@@ -1,3 +1,5 @@
+#!/bin/env python3
+
 #Generate a random list of size n, where n is from STDIN
 #Generate the list from a sample with first and last elements captured from arguments
 import random as ran

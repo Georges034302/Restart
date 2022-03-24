@@ -1,3 +1,5 @@
+#!/bin/env python3
+
 #Determine and print the power 3 of a range 1, 10
 
 from math import factorial

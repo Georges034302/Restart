@@ -1,4 +1,4 @@
-
+#!/bin/env python3
 #Print every element of the list on separate line
 mylist = [2022, "March", 23, "AWS", "Restart",True]
 

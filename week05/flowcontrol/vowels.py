@@ -1,3 +1,5 @@
+#!/bin/env python3
+
 #Read a sentence from STDIN
 #Count the number of vowels in this sentence
 

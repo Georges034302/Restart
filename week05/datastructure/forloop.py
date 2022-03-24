@@ -1,4 +1,4 @@
-
+#!/bin/env python3
 mylist = ["Hello", "Welcome", "To", "Restart",2022]
 
 for e in mylist:

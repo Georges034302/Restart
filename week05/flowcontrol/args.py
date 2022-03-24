@@ -1,3 +1,5 @@
+#!/bin/env python3
+
 #Detect the script arguments and apply the following scenarios:
 #1- if we have zero arguments print "no arguments"
 #2- if we have one argument then print "one argument"
