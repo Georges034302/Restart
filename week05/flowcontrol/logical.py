@@ -1,4 +1,4 @@
-#!/bin/env python3
+
 
 x = y = "Hello"
 print(x)
