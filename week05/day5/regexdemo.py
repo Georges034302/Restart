@@ -26,4 +26,8 @@ found = re.findall("\^",txt) #Return the carrots in the string
 found = re.findall("\d{3} | #",txt) #Returns a list of 3 digits and hashes
 #print(found)
 
+found = re.findall("python",txt)
+print(found)
+replaced = re.sub('python','java',txt)
+print(replaced)
 
