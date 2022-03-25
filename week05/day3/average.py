@@ -21,6 +21,5 @@ while number != -1:
     number = int(value)
         
 print("Average value = {:.3f}".format(total/count))
-
 print(f'Average value = {total/count:.3f}')   
 

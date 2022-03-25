@@ -6,7 +6,7 @@ import sys
 n = int(input("N = "))              #size of the random list
 first = int(sys.argv[1])                 #first element in the range
 last = int(sys.argv[2])                  #last element in the range
-
+ 
 mylist = ran.sample(range(first,last),n)      
 print(mylist)
 
