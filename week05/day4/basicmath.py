@@ -1,4 +1,5 @@
-#!/bin/env python3
+
+
 def add(a,b):               #function takes 2 arguments 
     return a+b              #returns a value
 
