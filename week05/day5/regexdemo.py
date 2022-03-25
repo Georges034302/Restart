@@ -28,6 +28,6 @@ found = re.findall("\d{3} | #",txt) #Returns a list of 3 digits and hashes
 
 found = re.findall("python",txt)
 print(found)
-replaced = re.sub('python','java',txt)
+replaced = re.sub('python','java',txt,flags=re.IGNORECASE) #replaces python with java
 print(replaced)
 
