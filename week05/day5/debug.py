@@ -1,7 +1,18 @@
 import logging
 
-output = '%(asctime)s - %(levelname)s - %(message)s'
-logging.basicConfig(filename='app.log',level=logging.DEBUG,format=output)
+# Gets or creates a logger
+logger = logging.getLogger(__name__)  
+
+# set log level
+logger.setLevel(logging.ERROR)
+
+# define file handler and set formatter
+file_handler = logging.FileHandler('logfile.log')
+formatter    = logging.Formatter('%(asctime)s : %(levelname)s : %(name)s : %(message)s')
+file_handler.setFormatter(formatter)
+
+# add file handler to logger
+logger.addHandler(file_handler)
 
 def read(prompt):
     return input(prompt)
@@ -13,23 +24,48 @@ def div(a,b):
     return a/b
 
 #Unit Test to validate the input
-def verifyInput(value):
+def verifyinput(value):
     assert str(value).isnumeric(), str(value)+" Not a number"
 
 #Unit Test to validate the division    
-def validateDiv(a,b):
+def validatediv(a,b):
     assert b==0 , "Cannot divide by Zero"
 
 def show():
-    a = logging.debug(read("a = "))     #debugging read a
-    b = logging.debug(read("b = "))     #debugging read b
+    a = read("a = ")     #debugging read a
+    b = read("b = ")     #debugging read b
     
     #The unit tests dynamically run with the script
-    verifyInput(a)
-    verifyInput(b)
-    validateDiv(a,b)
+    # verifyinput(a)
+    # verifyinput(b)    
+    # validatediv(a,b)
 
-    logging.getLogger().info(print(add(a,b)),stack_info=True)
-    logging.getLogger().info(print(div(a,b)),stack_info=True)
+    try:        
+        a = int(a)
+    except ValueError:
+        logger.error(f'ValueError: {a} should be an integer')
+    except TypeError:
+        logger.exception(f'Cannot cast {a} to int ')
+                           
+    try:        
+        b = int(b)
+    except ValueError:
+        logger.error(f'ValueError: {b} should be an integer')
+    except TypeError:
+        logger.exception(f'Cannot cast {b} to int ')
+                
+    try:    
+        print(add(a,b))
+    except TypeError:
+        logger.exception(f'Unsupported operand type(s) for + ')
+        
+    try:
+        print(div(a,b))
+    except ZeroDivisionError:
+        logger.exception(f'Cannot divide by 0 - b = 0')
+    except TypeError:
+        logger.exception(f'Unsupported operand type(s) for / ')
+        
+     
 show()
 
