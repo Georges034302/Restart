@@ -18,7 +18,7 @@ The university database development process inludes:
 7- display all students with grade D
 8- display all students with mark grater than 50 and grouped by grades
 9- display all students with grade HD , grouped by name and  with their marks greater than 90
-10- display all students with their grade eithr D or HD ordered by name is descrnding order.
+10- display all students with their grade eithr D or HD , grouped by grade, and ordered by name is descending order.
 
 
 ```
