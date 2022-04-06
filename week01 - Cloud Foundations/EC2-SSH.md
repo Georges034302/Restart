@@ -12,11 +12,10 @@ $ ssh -i "file.pem" ec2-user@hostname
 ### Copy Files From Your PC to EC2 using SCP:
 
 ```
-scp -i file.pem anyfile.anything ec2-user@hostname:~
+scp -i file.pem filename ec2-user@hostname:~
 
-scp -r /path/to/local/source ec2-user@hostname:/path/to/remote/destination 
+scp -i file.pem -r folder ec2-user@hostname:/path/to/remote/destination 
 
-scp -r 'C:\Users\George\Google Drive\Goanna\demo\Mom and Pop Cafe-Bakery' -i ec2keypair.pem ec2-user@54.243.19.114
 
 ```
 
@@ -33,9 +32,6 @@ scp -r ec2-user@hostname:/path/to/remote/source /path/to/local/destination
 yum -y install httpd
 systemctl enable httpd
 systemctl start httpd
-yum -y install sshd
-systemctl enable sshd
-systemctl start sshd
 echo '<html><h1>Hello From Your Web Server!</h1></html>' > /var/www/html/index.html
 ```
 
@@ -47,3 +43,42 @@ scp -i file.pem index.html ec2-user@hostname:~
 ssh -i "file.pem" ec2-user@hostname
 sudo cp index.html /var/www/html/index.html
 ```
+
+### To Fix SSH Permission denied (publickey,gssapi-keyex,gssapi-with-mic):
+* Stop the EC2 instance
+* From Actions choose Instance Settings and then select Edit User Data
+* Copy the following user data script into the Edit User Data dialog box, and then choose Save.
+* Replace the value for OS_USER with the user name associated with the AMI you launched your instance from.
+```
+Content-Type: multipart/mixed; boundary="//"
+MIME-Version: 1.0
+
+--//
+Content-Type: text/cloud-config; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="cloud-config.txt"
+
+#cloud-config
+cloud_final_modules:
+- [scripts-user, always]
+
+--//
+Content-Type:
+    text/x-shellscript; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="userdata.txt"
+
+#!/bin/bash
+OS_USER=@@@@@@
+chown root:root /home 
+chmod 755 /home
+chown $OS_USER:$OS_USER/home/$OS_USER -R
+chmod 700 /home/$OS_USER
+chmod 700 /home/$OS_USER/.ssh
+chmod 600 /home/$OS_USER/.ssh/authorized_keys
+--//
+
+```
+
