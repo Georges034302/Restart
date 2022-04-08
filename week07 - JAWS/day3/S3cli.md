@@ -1,6 +1,7 @@
 ## Using AWS S3 from CLI
 
-* https://docs.aws.amazon.com/cli/latest/reference/iam/
+* https://docs.aws.amazon.com/cli/latest/reference/s3
+* https://docs.aws.amazon.com/cli/latest/reference/s3api/
 
 ### Create a bucket - simple syntax:
 ```
