@@ -75,3 +75,45 @@ aws s3 rb s3://mydemowebsitepage --force 	[delete all files and bucket]
 aws s3 website s3://bucket --index-document index.html
 
 ```
+
+### Automate Web Hosting using a script:
+```
+#!/bin/bash
+
+#bucket=$1
+
+echo -n "Enter bucket name: "
+read bucket
+
+aws s3 mb s3://$bucket
+
+aws s3 website s3://$bucket/ --index-document index.html
+
+aws s3 sync . s3://$bucket --acl public-read
+
+aws s3 ls
+
+#curl http://$bucket.s3-website.ap-southeast-2.amazonaws.com
+
+start http://$bucket.s3-website-ap-southeast-2.amazonaws.com
+
+
+```
+
+
+### Clean S3 Environment using a script:
+```
+#!/bin/bash
+
+echo -n "Bucket name: "
+read bucket
+#bucket=$1
+
+aws s3 rm s3://$bucket --recursive  #deletes the contents of the bucket (empty)
+
+aws s3 rb s3://$bucket #deletes the bucket itself
+
+aws s3 ls
+
+
+```
