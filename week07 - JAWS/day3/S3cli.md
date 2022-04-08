@@ -65,9 +65,9 @@ aws s3 mv s3://bucket1 s3://bucket2
 aws s3 rb <target> [--options]
 
 Example:
-aws s3 rb s3://mydemowebsitepage    		[delete an empty bucket]
+aws s3 rb s3://bucket    		[delete an empty bucket]
 
-aws s3 rb s3://mydemowebsitepage --force 	[delete all files and bucket]
+aws s3 rb s3://bucket --force 	[delete all files and bucket]
 ```
 
 ### Host Static Website on S3:
